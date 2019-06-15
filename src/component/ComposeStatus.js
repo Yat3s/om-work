@@ -19,7 +19,11 @@ class ComposeStatus extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    handleSubmit(event) {
+    componentDidMount(){
+        this.props.onRef(this)
+    }
+
+    handleSubmit() {
         const { currentFeat } = this.state;
         // TODO Check input
         var inputWork = {
@@ -40,7 +44,6 @@ class ComposeStatus extends React.Component {
         }).catch(err => {
             console.error(err);
         });
-        event.preventDefault();
     }
 
     handleStatusChange(event) {
@@ -100,8 +103,6 @@ class ComposeStatus extends React.Component {
                             value={this.state.inputAbstract} onChange={this.handAbstractChange.bind(this)} />
                     </div>
                 </div>
-
-                <button className="ml-2 btn btn-primary" type="submit">Submit</button>
             </form>
         )
     }

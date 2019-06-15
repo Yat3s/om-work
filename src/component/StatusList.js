@@ -23,13 +23,11 @@ class StatusList extends React.Component {
         const featQuery = new AV.Query("Feat");
         featQuery.equalTo("team", "Android");
         featQuery.equalTo("sprint", this.props.sprint);
-        featQuery.addAscending('author');
         featQuery.find().then(res => {
-            console.log(res);
+            console.log("Feats", res);
             this.setState({
                 feats: this.state.feats.concat(res)
             })
-            console.log("Feats", this.state.feats[1]);
         }).catch(err => {
             console.error(err);
         });
@@ -50,8 +48,9 @@ class StatusList extends React.Component {
 
     handleOk = () => {
         this.setState({ loading: true });
-        this.getStatusBySprint();
+        this.child.handleSubmit();
         setTimeout(() => {
+            this.getStatusBySprint();
             this.setState({ loading: false, composeStatusModalVisible: false });
         }, 1000);
     };
@@ -59,6 +58,10 @@ class StatusList extends React.Component {
     handleCancel = () => {
         this.setState({ composeStatusModalVisible: false });
     };
+
+    onRef = (ref) => {
+        this.child = ref
+    }
 
     render() {
         const { visible, loading } = this.state;
@@ -121,7 +124,7 @@ class StatusList extends React.Component {
                         </Button>,
                     ]}
                 >
-                    <ComposeStatus author="Chris" currentFeat={this.state.currentEditingFeat} />
+                    <ComposeStatus onRef={this.onRef} author="Chris" currentFeat={this.state.currentEditingFeat} />
                 </Modal>
             </div>
         )
