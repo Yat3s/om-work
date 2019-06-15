@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import 'antd/dist/antd.css';
+
 import ComposeStatus from './component/ComposeStatus';
 import StatusList from './component/StatusList';
 
@@ -37,14 +39,9 @@ class App extends React.Component {
 
     return (
       <div className="App">
-
-        <div className="card p-5 shadow-sm mx-auto mt-5 mb-5" style={listStyle}>
+        <div style={listStyle}>
           <h1 className="center">Sprint {this.state.currentSprint}</h1>
           <StatusList sprint={this.state.currentSprint} />
-        </div>
-
-        <div className="card shadow mx-auto mt-5 mb-5" style={postStyle}>
-          <ComposeStatus author="Chris" id='5d04c1b587ab4e000b84f607' team="Android" sprint={this.state.currentSprint} />
         </div>
       </div>
     )
