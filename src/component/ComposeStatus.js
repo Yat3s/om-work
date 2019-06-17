@@ -12,9 +12,9 @@ class ComposeStatus extends React.Component {
             currentFeat: this.props.currentFeat,
             
             work: [],
-            inputStatus: 'Fixed',
-            inputAbstract: 'Some thing',
-            inputWorkItem: '12345',
+            inputStatus: 'Optional',
+            inputAbstract: '',
+            inputWorkItem: '',
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
@@ -27,7 +27,7 @@ class ComposeStatus extends React.Component {
         const { currentFeat } = this.state;
         // TODO Check input
         var inputWork = {
-            status: this.state.inputStatus,
+            status: this.state.inputStatus === 'Optional' ? '' : this.state.inputStatus,
             abstract: this.state.inputAbstract,
             workItem: this.state.inputWorkItem
         }
@@ -35,9 +35,9 @@ class ComposeStatus extends React.Component {
         var work = [...this.state.work, inputWork]
         var feat = new AV.Object('Feat');
         feat.id = currentFeat.id;
-        feat.set('name', currentFeat.attributes.author);
-        feat.set('team', currentFeat.attributes.team);
-        feat.set('sprint', currentFeat.attributes.sprint);
+        feat.set('name', currentFeat.author);
+        feat.set('team', currentFeat.team);
+        feat.set('sprint', currentFeat.sprint);
         feat.addUnique('work', work);
         feat.save().then(res => {
             console.log('feat objectId is ' + res.id);
@@ -46,9 +46,9 @@ class ComposeStatus extends React.Component {
         });
     }
 
-    handleStatusChange(event) {
+    handleStatusChange(status) {
         this.setState({
-            inputStatus: event.target.value
+            inputStatus: status
         });
     }
 
@@ -67,39 +67,32 @@ class ComposeStatus extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <div>Name: {this.state.currentFeat.attributes.author}</div>
-                <div>Sprint: {this.state.currentFeat.attributes.sprint}</div>
+                <div>Name: {this.state.currentFeat.author}</div>
+                <div className="mt-1">Sprint: {this.state.currentFeat.sprint}</div>
 
-                <InputGroup compact>
-                    <Select defaultValue="Option1">
-                        <Option value="Option1">Option1</Option>
-                        <Option value="Option2">Option2</Option>
-                    </Select>
+                <div className="mt-1">Status</div>
+                <Select className="mt-1" style={{ width: '40%' }} defaultValue="Optional" onChange={this.handleStatusChange.bind(this)} value={this.state.inputStatus}>
+                        <Option value="Optional">Optional</Option>
+                        <Option value="Fixed">Fixed</Option>
+                        <Option value="Completed">Completed</Option>
+                        <Option value="WIP with">WIP with</Option>
+                        <Option value="Closed">Closed</Option>
+                        <Option value="Investigating">Investigating</Option>
+                        <Option value="Resolved">Resolved</Option>
+                </Select>
 
-                    <Input style={{ width: '20%' }} defaultValue="input content" />
-                    <Input style={{ width: '50%' }} defaultValue="input content" />
-                </InputGroup>
-
-                <div className="form-group margin">
-                    <label htmlFor="status">Status</label>
-                    <div id="status" className="form-inline">
-                        <Input type="text" className="form-control" placeholder="Status"
-                            value={this.state.inputStatus} onChange={this.handleStatusChange.bind(this)} />
-                    </div>
-                </div>
-
-                <div className="form-group">
+                <div className="mt-1 form-group">
                     <label htmlFor="workItem">Work Item</label>
                     <div id="workItem" className="form-inline">
-                        <Input type="text" className="form-control" placeholder="WorkItem"
+                        <Input type="text" className="form-control" placeholder="Optional"
                             value={this.state.inputWorkItem} onChange={this.handleWorkItemChange.bind(this)} />
                     </div>
                 </div>
 
-                <div className="form-group">
+                <div className="mt-1 form-group">
                     <label htmlFor="abstract">Abstract</label>
                     <div id="abstract" className="form-inline">
-                        <Input type="text" className="form-control" placeholder="Abstract"
+                        <Input type="text" style={{ width: '100%' }} className="form-control" placeholder="Required"
                             value={this.state.inputAbstract} onChange={this.handAbstractChange.bind(this)} />
                     </div>
                 </div>

@@ -4,6 +4,7 @@ import 'antd/dist/antd.css';
 
 import ComposeStatus from './component/ComposeStatus';
 import StatusList from './component/StatusList';
+import { Button } from 'antd';
 
 class App extends React.Component {
   constructor(props) {
@@ -42,6 +43,7 @@ class App extends React.Component {
         <div style={listStyle}>
           <h1 className="center">Sprint {this.state.currentSprint}</h1>
           <StatusList sprint={this.state.currentSprint} />
+
         </div>
       </div>
     )
