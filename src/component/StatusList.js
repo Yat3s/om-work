@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react'
-import AV from 'leancloud-storage'
-import axios from "axios";
 import { Modal, Table, Divider, Tag, Button, Card } from 'antd';
 import ComposeStatus from './ComposeStatus';
+import axios from "axios";
 
 class StatusList extends React.Component {
     constructor(props) {
@@ -15,6 +14,7 @@ class StatusList extends React.Component {
             tableMarkdownPlainText: ''
         }
         this.getStatusBySprint = this.getStatusBySprint.bind(this);
+        axios.defaults.baseURL = 'http://localhost:3001';
     }
 
     getMembers() {
@@ -22,8 +22,7 @@ class StatusList extends React.Component {
         this.setState({
             feats: []
         })
-
-        axios.get('data/members.json')
+        axios.get('/members')
             .then(res => {
                 console.log("Members", res);
                 const members = res.data;
@@ -51,7 +50,8 @@ class StatusList extends React.Component {
 
     getStatusBySprint() {
         const { feats } = this.state;
-        axios.get('data/feats.json')
+
+        axios.get('/feats')
             .then(res => {
                 const featsData = res.data;
                 console.log("Feats", featsData);
@@ -76,7 +76,6 @@ class StatusList extends React.Component {
 
     componentDidMount() {
         this.getMembers();
-        // this.getStatusBySprint();
     }
 
     showModal = (feat, e) => {
@@ -105,6 +104,18 @@ class StatusList extends React.Component {
     }
 
     generateMarkdownPlaintext() {
+        axios.patch('/members/11', {
+            name2: 'Fredsssdwe',
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
+        return;
+
         const { feats } = this.state;
         var text = '## Sprint ' + this.props.sprint;
         text = text.concat('\n').concat('Name | Work').concat('\n-- | --');

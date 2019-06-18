@@ -1,6 +1,6 @@
 import React from "react"
 import { Input, Select, InputNumber } from 'antd';
-import AV from 'leancloud-storage';
+import axios from "axios";
 
 const InputGroup = Input.Group;
 const { Option } = Select;
@@ -17,6 +17,7 @@ class ComposeStatus extends React.Component {
             inputWorkItem: '',
         }
         this.handleSubmit = this.handleSubmit.bind(this)
+        axios.defaults.baseURL = 'http://localhost:3001';
     }
 
     componentDidMount(){
@@ -32,18 +33,26 @@ class ComposeStatus extends React.Component {
             workItem: this.state.inputWorkItem
         }
 
-        var work = [...this.state.work, inputWork]
-        var feat = new AV.Object('Feat');
-        feat.id = currentFeat.id;
-        feat.set('name', currentFeat.author);
-        feat.set('team', currentFeat.team);
-        feat.set('sprint', currentFeat.sprint);
-        feat.addUnique('work', work);
-        feat.save().then(res => {
-            console.log('feat objectId is ' + res.id);
-        }).catch(err => {
-            console.error(err);
-        });
+        if(currentFeat.id) {
+            var work = [...currentFeat.work, inputWork]
+            axios.patch('/feats/' + currentFeat.id, {
+                work: work
+            })
+            .then(res => {
+
+            })
+
+        } else {
+            var work = 
+            axios.post('/feats', {
+                name:  currentFeat.author,
+                team: currentFeat.team,
+                work: work
+            })
+            .then(res => {
+
+            })
+        }
     }
 
     handleStatusChange(status) {

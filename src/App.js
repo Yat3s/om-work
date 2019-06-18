@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
 
-import ComposeStatus from './component/ComposeStatus';
 import StatusList from './component/StatusList';
 import { Button } from 'antd';
 
