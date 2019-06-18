@@ -3,7 +3,6 @@ import './App.css';
 import 'antd/dist/antd.css';
 
 import StatusList from './component/StatusList';
-import { Button } from 'antd';
 
 class App extends React.Component {
   constructor(props) {
