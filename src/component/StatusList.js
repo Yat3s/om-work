@@ -104,18 +104,6 @@ class StatusList extends React.Component {
     }
 
     generateMarkdownPlaintext() {
-        axios.patch('/members/11', {
-            name2: 'Fredsssdwe',
-          })
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-
-        return;
-
         const { feats } = this.state;
         var text = '## Sprint ' + this.props.sprint;
         text = text.concat('\n').concat('Name | Work').concat('\n-- | --');
