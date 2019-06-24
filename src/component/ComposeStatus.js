@@ -17,7 +17,7 @@ class ComposeStatus extends React.Component {
             inputWorkItem: '',
         }
         this.handleSubmit = this.handleSubmit.bind(this)
-        axios.defaults.baseURL = 'http://localhost:3001';
+        axios.defaults.baseURL = 'http://10.94.88.62:3001';
     }
 
     componentDidMount(){
@@ -32,7 +32,6 @@ class ComposeStatus extends React.Component {
             abstract: this.state.inputAbstract,
             workItem: this.state.inputWorkItem
         }
-
         if(currentFeat.id) {
             var work = [...currentFeat.work, inputWork]
             axios.patch('/feats/' + currentFeat.id, {
@@ -43,9 +42,9 @@ class ComposeStatus extends React.Component {
             })
 
         } else {
-            var work = 
+            var work = [inputWork]
             axios.post('/feats', {
-                name:  currentFeat.author,
+                author:  currentFeat.author,
                 team: currentFeat.team,
                 work: work
             })

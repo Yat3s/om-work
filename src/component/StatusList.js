@@ -14,7 +14,7 @@ class StatusList extends React.Component {
             tableMarkdownPlainText: ''
         }
         this.getStatusBySprint = this.getStatusBySprint.bind(this);
-        axios.defaults.baseURL = 'http://localhost:3001';
+        axios.defaults.baseURL = 'http://10.94.88.62:3001';
     }
 
     getMembers() {
@@ -81,8 +81,8 @@ class StatusList extends React.Component {
     showModal = (feat, e) => {
         console.log("Current editing feat", feat);
         this.setState({
+            currentEditingFeat: feat,
             composeStatusModalVisible: true,
-            currentEditingFeat: feat
         });
     };
 
@@ -194,23 +194,25 @@ class StatusList extends React.Component {
                         value={this.state.tableMarkdownPlainText}
                         style={{ width: 1000 }} className='shadow-sm p-3 mb-5 bg-white' />
                 </div>
-
-                <Modal
-                    title="Add Status"
-                    visible={this.state.composeStatusModalVisible}
-                    onOk={this.handleOk}
-                    onCancel={this.handleCancel}
-                    footer={[
-                        <Button key="back" onClick={this.handleCancel}>
-                            Cancel
+                {
+                    this.state.composeStatusModalVisible &&
+                    <Modal
+                        title="Add Status"
+                        visible={true}
+                        onOk={this.handleOk}
+                        onCancel={this.handleCancel}
+                        footer={[
+                            <Button key="back" onClick={this.handleCancel}>
+                                Cancel
                         </Button>,
-                        <Button key="submit" type="primary" loading={loading} onClick={this.handleOk}>
-                            Submit
+                            <Button key="submit" type="primary" loading={loading} onClick={this.handleOk}>
+                                Submit
                         </Button>,
-                    ]}
-                >
-                    <ComposeStatus onRef={this.onRef} author="Chris" currentFeat={this.state.currentEditingFeat} />
-                </Modal>
+                        ]}
+                    >
+                        <ComposeStatus onRef={this.onRef} author="Chris" currentFeat={this.state.currentEditingFeat} />
+                    </Modal>
+                }
             </div>
         )
     }
