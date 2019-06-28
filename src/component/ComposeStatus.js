@@ -1,8 +1,7 @@
 import React from "react"
-import { Input, Select, InputNumber } from 'antd';
+import { Input, Select, Divider } from 'antd';
 import axios from "axios";
-
-const InputGroup = Input.Group;
+import { config } from '../Config'
 const { Option } = Select;
 
 class ComposeStatus extends React.Component {
@@ -10,24 +9,24 @@ class ComposeStatus extends React.Component {
         super(props)
         this.state = {
             currentFeat: this.props.currentFeat,
-            
+
             work: [],
             inputStatus: 'Optional',
             inputAbstract: '',
             inputWorkItem: '',
         }
         this.handleSubmit = this.handleSubmit.bind(this)
-        axios.defaults.baseURL = 'http://10.172.207.166:3001';
+        axios.defaults.baseURL = config.BASE_URL;
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.onRef(this)
     }
 
     handleSubmit() {
         const { currentFeat } = this.state;
-        if(!this.state.inputAbstract) {
-            alert("Invalid content:abstract is required")
+        if (!this.state.inputAbstract) {
+            alert("Invalid content: the abstract is required")
             return false
         }
         // TODO Check input
@@ -37,26 +36,25 @@ class ComposeStatus extends React.Component {
             workItem: this.state.inputWorkItem,
             id: new Date().getTime()
         }
-        if(currentFeat.id) {
+        if (currentFeat.id) {
             var work = [...currentFeat.work, inputWork]
             axios.patch('/feats/' + currentFeat.id, {
                 work: work
             })
-            .then(res => {
+                .then(res => {
 
-            })
-
+                })
         } else {
             var work = [inputWork]
             axios.post('/feats', {
-                author:  currentFeat.author,
+                author: currentFeat.author,
                 team: currentFeat.team,
                 sprint: currentFeat.sprint,
                 work: work,
             })
-            .then(res => {
+                .then(res => {
 
-            })
+                })
         }
         return true
     }
@@ -82,35 +80,34 @@ class ComposeStatus extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <div>Name: {this.state.currentFeat.author}</div>
-                <div className="mt-1">Sprint: {this.state.currentFeat.sprint}</div>
+                <Divider>{this.state.currentFeat.author} · Sprint {this.state.currentFeat.sprint}</Divider>
 
-                <div className="mt-1">Status</div>
-                <Select className="mt-1" style={{ width: '40%' }} defaultValue="Optional" onChange={this.handleStatusChange.bind(this)} value={this.state.inputStatus}>
-                        <Option value="Optional">Optional</Option>
-                        <Option value="Fixed">Fixed</Option>
-                        <Option value="Completed">Completed</Option>
-                        <Option value="WIP with">WIP with</Option>
-                        <Option value="Closed">Closed</Option>
-                        <Option value="Investigating">Investigating</Option>
-                        <Option value="Resolved">Resolved</Option>
+                <div className="mt-1"><b>Status (Optional)</b></div>
+                <Select className="mt-1" style={{ width: '30%' }} defaultValue="Optional" onChange={this.handleStatusChange.bind(this)} value={this.state.inputStatus}>
+                    <Option value="Optional">Optional</Option>
+                    <Option value="Fixed">Fixed</Option>
+                    <Option value="Completed">Completed</Option>
+                    <Option value="WIP with">WIP with</Option>
+                    <Option value="Closed">Closed</Option>
+                    <Option value="Investigating">Investigating</Option>
+                    <Option value="Resolved">Resolved</Option>
                 </Select>
 
-                <div className="mt-1 form-group">
-                    <label htmlFor="workItem">Work Item</label>
-                    <div id="workItem" className="form-inline">
-                        <Input type="text" className="form-control" placeholder="Optional"
-                            value={this.state.inputWorkItem} onChange={this.handleWorkItemChange.bind(this)} />
-                    </div>
-                </div>
+                <div className="mt-3 mb-2">
+                    <b> Work Item Number (Optional)</b></div>
+                <Input
+                    style={{ width: '30%' }}
+                    placeholder="Work item number"
+                    value={this.state.inputWorkItem}
+                    onChange={this.handleWorkItemChange.bind(this)}
+                />
 
-                <div className="mt-1 form-group">
-                    <label htmlFor="abstract">Abstract</label>
-                    <div id="abstract" className="form-inline">
-                        <Input type="text" style={{ width: '100%' }} className="form-control" placeholder="Required"
-                            value={this.state.inputAbstract} onChange={this.handAbstractChange.bind(this)} />
-                    </div>
-                </div>
+                <div className="mt-3 mb-2"><b>Abstract (Required)</b></div>
+                <Input
+                    placeholder="Simplify and clearly abstract is more friendly"
+                    value={this.state.inputAbstract}
+                    onChange={this.handAbstractChange.bind(this)}
+                />
             </form>
         )
     }

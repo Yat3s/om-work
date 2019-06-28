@@ -3,52 +3,62 @@
     {
       "id": 1,
       "name": "Chris Ye",
-      "team": "Android"
+      "team": "Android",
+      "email": "zhiye@microsoft.com"
     },
     {
       "id": 2,
       "name": "Candy Zhang",
-      "team": "Android"
+      "team": "Android",
+      "email": "Xiulin.Zhang@microsoft.com"
     },
     {
       "id": 3,
       "name": "Summer Li",
-      "team": "Android"
+      "team": "Android",
+      "email": "Summer.Li@microsoft.com"
     },
     {
       "id": 4,
       "name": "Lency Qian",
-      "team": "Android"
+      "team": "Android",
+      "email": "Lei.Qian@microsoft.com"
     },
     {
       "id": 5,
       "name": "Shaun Wang",
-      "team": "Android"
+      "team": "Android",
+      "email": "yangw@microsoft.com"
     },
     {
       "id": 6,
       "name": "Raid Xu",
-      "team": "Android"
+      "team": "Android",
+      "email": "Raid.Xu@microsoft.com"
     },
     {
       "id": 7,
       "name": "Lin Zhang",
-      "team": "Android"
+      "team": "Android",
+      "email": "lizhang2@microsoft.com"
     },
     {
       "id": 8,
       "name": "Drakeet Xu",
-      "team": "Android"
+      "team": "Android",
+      "email": "Drakeet.Xu@microsoft.com"
     },
     {
       "id": 9,
       "team": "Android",
-      "name": "Hope Lu"
+      "name": "Hope Lu",
+      "email": "yalu2@microsoft.com"
     },
     {
       "id": 10,
       "name": "Wei Meng",
-      "team": "Android"
+      "team": "Android",
+      "email": "wemeng@microsoft.com"
     }
   ],
   "feats": [
@@ -56,15 +66,29 @@
       "author": "Chris Ye",
       "team": "Android",
       "sprint": 217,
-      "work": [
-        {
-          "status": "",
-          "abstract": "124",
-          "workItem": "124",
-          "id": 1561711409381
-        }
-      ],
+      "work": [],
       "id": 1
+    },
+    {
+      "author": "Candy Zhang",
+      "team": "Android",
+      "sprint": 217,
+      "work": [],
+      "id": 2
+    },
+    {
+      "author": "Summer Li",
+      "team": "Android",
+      "sprint": 217,
+      "work": [],
+      "id": 3
+    },
+    {
+      "author": "Shaun Wang",
+      "team": "Android",
+      "sprint": 217,
+      "work": [],
+      "id": 4
     }
   ],
   "comments": [

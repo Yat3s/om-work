@@ -1,7 +1,10 @@
 import React, { Fragment } from 'react'
-import { Modal, Table, Tag, Button } from 'antd';
+import { Modal, Table, Tag, Button, Icon } from 'antd';
 import ComposeStatus from './ComposeStatus';
 import axios from "axios";
+import { config } from '../Config'
+
+const  ReactMardown  =  require('react-markdown')
 
 class StatusList extends React.Component {
     constructor(props) {
@@ -16,7 +19,7 @@ class StatusList extends React.Component {
         }
         this.getCurrentSprintStatus = this.getCurrentSprintStatus.bind(this);
         this.removeWork = this.removeWork.bind(this);
-        axios.defaults.baseURL = 'http://10.172.207.166:3001';
+        axios.defaults.baseURL = config.BASE_URL;
     }
 
     getMembers() {
@@ -35,6 +38,7 @@ class StatusList extends React.Component {
                         sprint: this.state.sprint,
                         author: members[i].name,
                         team: members[i].team,
+                        authorEmail: members[i].email
                     }
                     feats = [...feats, feat];
                 }
@@ -90,7 +94,7 @@ class StatusList extends React.Component {
     };
 
     handleOk = () => {
-        if(this.child.handleSubmit()) {
+        if (this.child.handleSubmit()) {
             this.setState({ loading: true });
             setTimeout(() => {
                 this.getCurrentSprintStatus();
@@ -138,7 +142,7 @@ class StatusList extends React.Component {
         setTimeout(() => {
             copyText.select();
             document.execCommand("copy");
-            alert("Copy to your clipboard");
+            alert("The Markdown table plaintext has copied to your clipboard");
         }, 300);
         console.log(text);
     }
@@ -150,7 +154,7 @@ class StatusList extends React.Component {
         const { feats } = this.state;
         var workIndex;
         for (workIndex in feat.work) {
-            if(feat.work[workIndex].id === workItem.id) {
+            if (feat.work[workIndex].id === workItem.id) {
                 feat.work.splice(workIndex, 1);
                 break;
             }
@@ -159,7 +163,7 @@ class StatusList extends React.Component {
         // Local lie: Replace with processed result 
         var featIndex;
         for (featIndex in feats) {
-            if(feats[featIndex].id === feat.id) {
+            if (feats[featIndex].id === feat.id) {
                 feats[featIndex] = feat;
                 break
             }
@@ -172,9 +176,9 @@ class StatusList extends React.Component {
         axios.patch('/feats/' + feat.id, {
             work: feat.work
         })
-        .then(res => {
-            
-        })
+            .then(res => {
+
+            })
     }
 
     render() {
@@ -184,7 +188,7 @@ class StatusList extends React.Component {
                 title: 'Name',
                 key: 'author',
                 dataIndex: 'author',
-                render: text => <a href="javascript:;">{text}</a>,
+                render: text => <b>{text}</b>,
             },
             {
                 title: 'Work Status',
@@ -192,11 +196,11 @@ class StatusList extends React.Component {
                 dataIndex: 'work',
                 render: (work, record) => (
                     <div>
-                        {work ? work.map(item => {
+                        {work && work.length > 0 ? work.map(item => {
                             let color = 'geekblue';
                             let workItemUrl = "https://office.visualstudio.com/Outlook%20Mobile/_workitems/edit/" + item.workItem;
                             return (
-                                <div key={item.id} className='pt-1' >
+                                <div className="pt-1 d-flex align-items-center" key={item.id}>
                                     {
                                         item.status &&
                                         <Tag color={color} key={item.status}>
@@ -206,8 +210,11 @@ class StatusList extends React.Component {
                                     {
                                         item.workItem && <a className="mr-1" href={workItemUrl}>{item.workItem}</a>
                                     }
+                                    
                                     <b>{item.abstract}</b>
-                                    <Button type="dashed" shape="round" icon="close" size="small" onClick={this.removeWork.bind(this, item, record)}/>
+                                    {/* <ReactMardown align="center" source={item.abstract}/> */}
+
+                                    <Icon className="ml-1" type="close-circle" theme="filled" onClick={this.removeWork.bind(this, item, record)} />
                                 </div>
                             );
                         }) : <div>Nothing here</div>
@@ -219,17 +226,21 @@ class StatusList extends React.Component {
             {
                 title: 'Action',
                 key: 'action',
-                render: (text, record) => (
-                    <span>
-                        <a href="javascript:;">Remind  {record.author}</a>
-                    </span>
-                ),
+                render: (text, record) => {
+                    const teamsChatLink = "https://teams.microsoft.com/l/chat/0/0?users="
+                        + record.authorEmail + "&message=Hey, " + record.author + ", Please remember to sync your status(Sprint " + this.state.sprint + ") on the " + config.BASE_URL
+                    return (
+                        <span>
+                            <a href={teamsChatLink} target="_blank">Remind  {record.author}</a>
+                        </span>
+                    )
+                }
             },
         ];
         return (
             <div>
                 <div className='m-5 shadow p-5' align="end">
-                    <Button onClick={this.generateMarkdownPlaintext.bind(this)}>Generate Markdown Plaintext</Button>
+                    <Button type="primary" onClick={this.generateMarkdownPlaintext.bind(this)}>Generate Markdown Plaintext</Button>
                     <Table className='mt-3' columns={columns} dataSource={this.state.feats} />
                 </div>
 
