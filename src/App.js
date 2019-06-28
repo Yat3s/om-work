@@ -34,14 +34,14 @@ class App extends React.Component {
 
     var listStyle = {
       width: '80rem',
+      align: 'center'
     };
 
     return (
-      <div className="App">
-        <div style={listStyle}>
-          <h1 className="center">Sprint {this.state.currentSprint}</h1>
-          <StatusList sprint={this.state.currentSprint} />
-
+      <div className="App p-5">
+        <div align="center" className="center">
+          <h1 className="center mt-5">Sprint {this.state.currentSprint}</h1>
+          <StatusList className="center"  style={listStyle} sprint={this.state.currentSprint} />
         </div>
       </div>
     )

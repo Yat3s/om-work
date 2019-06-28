@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Modal, Table, Divider, Tag, Button, Card } from 'antd';
+import { Modal, Table, Tag, Button } from 'antd';
 import ComposeStatus from './ComposeStatus';
 import axios from "axios";
 
@@ -7,14 +7,16 @@ class StatusList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            sprint: props.sprint,
             feats: [],
             composeStatusModalVisible: false,
             loading: false,
             currentEditingFeat: null,
             tableMarkdownPlainText: ''
         }
-        this.getStatusBySprint = this.getStatusBySprint.bind(this);
-        axios.defaults.baseURL = 'http://10.94.88.62:3001';
+        this.getCurrentSprintStatus = this.getCurrentSprintStatus.bind(this);
+        this.removeWork = this.removeWork.bind(this);
+        axios.defaults.baseURL = 'http://10.172.207.166:3001';
     }
 
     getMembers() {
@@ -30,6 +32,7 @@ class StatusList extends React.Component {
                 var feats = []
                 for (i in members) {
                     var feat = {
+                        sprint: this.state.sprint,
                         author: members[i].name,
                         team: members[i].team,
                     }
@@ -41,17 +44,17 @@ class StatusList extends React.Component {
                 })
                 console.log('Resolve feats', this.state.feats);
 
-                this.getStatusBySprint();
+                this.getCurrentSprintStatus();
             })
             .catch(error => {
                 console.error(error);
             })
     }
 
-    getStatusBySprint() {
+    getCurrentSprintStatus() {
         const { feats } = this.state;
 
-        axios.get('/feats')
+        axios.get('/feats?sprint=' + this.state.sprint)
             .then(res => {
                 const featsData = res.data;
                 console.log("Feats", featsData);
@@ -87,12 +90,13 @@ class StatusList extends React.Component {
     };
 
     handleOk = () => {
-        this.setState({ loading: true });
-        this.child.handleSubmit();
-        setTimeout(() => {
-            this.getStatusBySprint();
-            this.setState({ loading: false, composeStatusModalVisible: false });
-        }, 1000);
+        if(this.child.handleSubmit()) {
+            this.setState({ loading: true });
+            setTimeout(() => {
+                this.getCurrentSprintStatus();
+                this.setState({ loading: false, composeStatusModalVisible: false });
+            }, 1000);
+        }
     };
 
     handleCancel = () => {
@@ -139,6 +143,40 @@ class StatusList extends React.Component {
         console.log(text);
     }
 
+    removeWork(workItem, feat) {
+        // Remove work
+        console.log("removeWork", workItem)
+        console.log("removeWorkFeat", feat)
+        const { feats } = this.state;
+        var workIndex;
+        for (workIndex in feat.work) {
+            if(feat.work[workIndex].id === workItem.id) {
+                feat.work.splice(workIndex, 1);
+                break;
+            }
+        }
+
+        // Local lie: Replace with processed result 
+        var featIndex;
+        for (featIndex in feats) {
+            if(feats[featIndex].id === feat.id) {
+                feats[featIndex] = feat;
+                break
+            }
+        }
+
+        this.setState({
+            feats
+        })
+
+        axios.patch('/feats/' + feat.id, {
+            work: feat.work
+        })
+        .then(res => {
+            
+        })
+    }
+
     render() {
         const { loading } = this.state;
         const columns = [
@@ -156,12 +194,20 @@ class StatusList extends React.Component {
                     <div>
                         {work ? work.map(item => {
                             let color = 'geekblue';
+                            let workItemUrl = "https://office.visualstudio.com/Outlook%20Mobile/_workitems/edit/" + item.workItem;
                             return (
-                                <div key={record.author + item.status + item.workItem + item.abstract} className='pt-1' >
-                                    <Tag color={color} key={item.status}>
-                                        {item.status}
-                                    </Tag>
-                                    {item.workItem} {item.abstract}
+                                <div key={item.id} className='pt-1' >
+                                    {
+                                        item.status &&
+                                        <Tag color={color} key={item.status}>
+                                            {item.status}
+                                        </Tag>
+                                    }
+                                    {
+                                        item.workItem && <a className="mr-1" href={workItemUrl}>{item.workItem}</a>
+                                    }
+                                    <b>{item.abstract}</b>
+                                    <Button type="dashed" shape="round" icon="close" size="small" onClick={this.removeWork.bind(this, item, record)}/>
                                 </div>
                             );
                         }) : <div>Nothing here</div>
@@ -202,12 +248,8 @@ class StatusList extends React.Component {
                         onOk={this.handleOk}
                         onCancel={this.handleCancel}
                         footer={[
-                            <Button key="back" onClick={this.handleCancel}>
-                                Cancel
-                        </Button>,
-                            <Button key="submit" type="primary" loading={loading} onClick={this.handleOk}>
-                                Submit
-                        </Button>,
+                            <Button key="back" onClick={this.handleCancel}>Cancel</Button>,
+                            <Button key="submit" type="primary" loading={loading} onClick={this.handleOk}>Submit</Button>,
                         ]}
                     >
                         <ComposeStatus onRef={this.onRef} author="Chris" currentFeat={this.state.currentEditingFeat} />

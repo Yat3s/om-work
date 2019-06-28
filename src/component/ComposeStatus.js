@@ -17,7 +17,7 @@ class ComposeStatus extends React.Component {
             inputWorkItem: '',
         }
         this.handleSubmit = this.handleSubmit.bind(this)
-        axios.defaults.baseURL = 'http://10.94.88.62:3001';
+        axios.defaults.baseURL = 'http://10.172.207.166:3001';
     }
 
     componentDidMount(){
@@ -26,11 +26,16 @@ class ComposeStatus extends React.Component {
 
     handleSubmit() {
         const { currentFeat } = this.state;
+        if(!this.state.inputAbstract) {
+            alert("Invalid content:abstract is required")
+            return false
+        }
         // TODO Check input
         var inputWork = {
             status: this.state.inputStatus === 'Optional' ? '' : this.state.inputStatus,
             abstract: this.state.inputAbstract,
-            workItem: this.state.inputWorkItem
+            workItem: this.state.inputWorkItem,
+            id: new Date().getTime()
         }
         if(currentFeat.id) {
             var work = [...currentFeat.work, inputWork]
@@ -46,12 +51,14 @@ class ComposeStatus extends React.Component {
             axios.post('/feats', {
                 author:  currentFeat.author,
                 team: currentFeat.team,
-                work: work
+                sprint: currentFeat.sprint,
+                work: work,
             })
             .then(res => {
 
             })
         }
+        return true
     }
 
     handleStatusChange(status) {
