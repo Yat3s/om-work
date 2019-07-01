@@ -17,7 +17,7 @@ class StatusList extends React.Component {
         }
         this.getCurrentSprintStatus = this.getCurrentSprintStatus.bind(this);
         this.removeWork = this.removeWork.bind(this);
-        axios.defaults.baseURL = config.BASE_URL;
+        axios.defaults.baseURL = config.BASE_URL_DB;
     }
 
     getMembers() {
