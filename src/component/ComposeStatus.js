@@ -16,7 +16,7 @@ class ComposeStatus extends React.Component {
             inputWorkItem: '',
         }
         this.handleSubmit = this.handleSubmit.bind(this)
-        axios.defaults.baseURL = config.BASE_URL;
+        axios.defaults.baseURL = config.BASE_URL_DB;
     }
 
     componentDidMount() {
