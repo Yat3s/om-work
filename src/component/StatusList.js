@@ -1,10 +1,8 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Modal, Table, Tag, Button, Icon } from 'antd';
 import ComposeStatus from './ComposeStatus';
 import axios from "axios";
 import { config } from '../Config'
-
-const  ReactMardown  =  require('react-markdown')
 
 class StatusList extends React.Component {
     constructor(props) {
@@ -35,18 +33,18 @@ class StatusList extends React.Component {
                 var feats = []
                 for (i in members) {
                     var feat = {
+                        authorEmail: members[i].email,
                         sprint: this.state.sprint,
                         author: members[i].name,
-                        team: members[i].team,
-                        authorEmail: members[i].email
+                        team: members[i].team
                     }
-                    feats = [...feats, feat];
+                    feats = feats.concat(feat);
                 }
                 // Add placeholder for showing all members
                 this.setState({
                     feats
                 })
-                console.log('Resolve feats', this.state.feats);
+                console.log('Resolve feats', feats);
 
                 this.getCurrentSprintStatus();
             })
@@ -208,7 +206,7 @@ class StatusList extends React.Component {
                                         </Tag>
                                     }
                                     {
-                                        item.workItem && <a className="mr-1" href={workItemUrl}>{item.workItem}</a>
+                                        item.workItem && <a className="mr-1" href={workItemUrl} target="_blank">{item.workItem}</a>
                                     }
                                     
                                     <b>{item.abstract}</b>

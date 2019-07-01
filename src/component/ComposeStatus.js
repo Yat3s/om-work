@@ -40,21 +40,20 @@ class ComposeStatus extends React.Component {
             var work = [...currentFeat.work, inputWork]
             axios.patch('/feats/' + currentFeat.id, {
                 work: work
-            })
-                .then(res => {
+            }).then(res => {
 
-                })
+            })
         } else {
             var work = [inputWork]
             axios.post('/feats', {
                 author: currentFeat.author,
                 team: currentFeat.team,
                 sprint: currentFeat.sprint,
+                authorEmail: currentFeat.authorEmail,
                 work: work,
-            })
-                .then(res => {
+            }).then(res => {
 
-                })
+            })
         }
         return true
     }

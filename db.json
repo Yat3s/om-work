@@ -2,57 +2,57 @@
   "members": [
     {
       "id": 1,
-      "name": "Chris Ye",
-      "team": "Android",
-      "email": "zhiye@microsoft.com"
-    },
-    {
-      "id": 2,
       "name": "Candy Zhang",
       "team": "Android",
       "email": "Xiulin.Zhang@microsoft.com"
     },
     {
+      "id": 2,
+      "name": "Chris Ye",
+      "team": "Android",
+      "email": "zhiye@microsoft.com"
+    },
+    {
       "id": 3,
-      "name": "Summer Li",
-      "team": "Android",
-      "email": "Summer.Li@microsoft.com"
-    },
-    {
-      "id": 4,
-      "name": "Lency Qian",
-      "team": "Android",
-      "email": "Lei.Qian@microsoft.com"
-    },
-    {
-      "id": 5,
-      "name": "Shaun Wang",
-      "team": "Android",
-      "email": "yangw@microsoft.com"
-    },
-    {
-      "id": 6,
-      "name": "Raid Xu",
-      "team": "Android",
-      "email": "Raid.Xu@microsoft.com"
-    },
-    {
-      "id": 7,
-      "name": "Lin Zhang",
-      "team": "Android",
-      "email": "lizhang2@microsoft.com"
-    },
-    {
-      "id": 8,
       "name": "Drakeet Xu",
       "team": "Android",
       "email": "Drakeet.Xu@microsoft.com"
     },
     {
-      "id": 9,
+      "id": 4,
       "team": "Android",
       "name": "Hope Lu",
       "email": "yalu2@microsoft.com"
+    },
+    {
+      "id": 5,
+      "name": "Lency Qian",
+      "team": "Android",
+      "email": "Lei.Qian@microsoft.com"
+    },
+    {
+      "id": 6,
+      "name": "Lin Zhang",
+      "team": "Android",
+      "email": "lizhang2@microsoft.com"
+    },
+    {
+      "id": 7,
+      "name": "Raid Xu",
+      "team": "Android",
+      "email": "Raid.Xu@microsoft.com"
+    },
+    {
+      "id": 8,
+      "name": "Shaun Wang",
+      "team": "Android",
+      "email": "yangw@microsoft.com"
+    },
+    {
+      "id": 9,
+      "name": "Summer Li",
+      "team": "Android",
+      "email": "Summer.Li@microsoft.com"
     },
     {
       "id": 10,
@@ -64,31 +64,243 @@
   "feats": [
     {
       "author": "Chris Ye",
+      "authorEmail": "zhiye@microsoft.com",
       "team": "Android",
       "sprint": 217,
-      "work": [],
+      "work": [
+        {
+          "status": "WIP with",
+          "abstract": "Remove Event.getLocation() method",
+          "workItem": "3161967",
+          "id": 1561948640387
+        },
+        {
+          "status": "Closed",
+          "abstract": "'Downloading file' message displayed although action is not done",
+          "workItem": "3154422",
+          "id": 1561959340490
+        },
+        {
+          "status": "Investigating",
+          "abstract": "The attendee sees only it's own status in meeting detail view",
+          "workItem": "3419724",
+          "id": 1561959419374
+        },
+        {
+          "status": "Resolved",
+          "abstract": "App crashes after opening and tapping on the back button on the event detail",
+          "workItem": "3434186",
+          "id": 1561959472476
+        },
+        {
+          "status": "Resolved",
+          "abstract": "App crashes after tapping on add event from menu",
+          "workItem": "3434187",
+          "id": 1561959496149
+        }
+      ],
       "id": 1
     },
     {
       "author": "Candy Zhang",
+      "authorEmail": "Xiulin.Zhang@microsoft.com",
       "team": "Android",
       "sprint": 217,
-      "work": [],
+      "work": [
+        {
+          "status": "WIP with",
+          "abstract": "[Android] Day & 3-day view > Improve all-day section behavior (WIP waiting for designer's reply)",
+          "workItem": "3143578",
+          "id": 1561967507111
+        },
+        {
+          "status": "WIP with",
+          "abstract": "[TESTLIO][Calendar] 'No calendars to display' message appears after adding Interesting calendar and refreshing the page from All calendars tab",
+          "workItem": "3282411",
+          "id": 1561967591636
+        }
+      ],
       "id": 2
     },
     {
       "author": "Summer Li",
+      "authorEmail": "Summer.Li@microsoft.com",
       "team": "Android",
       "sprint": 217,
-      "work": [],
+      "work": [
+        {
+          "status": "Completed",
+          "abstract": "[Dark mode] Add dark mode shaker on Android",
+          "workItem": "",
+          "id": 1561966897938
+        },
+        {
+          "status": "Completed",
+          "abstract": "[Dark Mode] Black text and icon tint on blue surface",
+          "workItem": "",
+          "id": 1561966937719
+        },
+        {
+          "status": "Completed",
+          "abstract": "[Dark mode] Apply darken color treatment for all calendar colors",
+          "workItem": "",
+          "id": 1561966985402
+        }
+      ],
       "id": 3
     },
     {
       "author": "Shaun Wang",
+      "authorEmail": "yangw@microsoft.com",
       "team": "Android",
       "sprint": 217,
-      "work": [],
+      "work": [
+        {
+          "status": "WIP with",
+          "abstract": "Add metrics for calendar components",
+          "workItem": "3446842",
+          "id": 1561960133210
+        },
+        {
+          "status": "WIP with",
+          "abstract": "[shaker-android] Calendar will not stop scrolling through the dates when system language is Hevrew.",
+          "workItem": "3457284",
+          "id": 1561960159046
+        },
+        {
+          "status": "WIP with",
+          "abstract": "Show \"Loading message...\" snackbar when loading message from notification(Code review)",
+          "workItem": "3393033",
+          "id": 1561960210831
+        },
+        {
+          "status": "Investigating",
+          "abstract": "[TESTLIO][Calendar] Online meeting link is not displayed at the event details when creating Skype meeting event",
+          "workItem": "3358733",
+          "id": 1561960349820
+        },
+        {
+          "status": "Closed",
+          "abstract": "[Calendar] Invitation email to share Calendar reset each time the app closed",
+          "workItem": "3447170",
+          "id": 1561960517328
+        }
+      ],
       "id": 4
+    },
+    {
+      "author": "Wei Meng",
+      "authorEmail": "wemeng@microsoft.com",
+      "team": "Android",
+      "sprint": 217,
+      "work": [
+        {
+          "status": "Completed",
+          "abstract": "OD4B > Auto-create account as Files Direct when adding AAD accounts",
+          "workItem": "3445425",
+          "id": 1561949756756
+        },
+        {
+          "status": "Completed",
+          "abstract": "OD4B > Auto migrate account silently at cold app startup",
+          "workItem": "3445432",
+          "id": 1561949783572
+        },
+        {
+          "status": "Completed",
+          "abstract": "Direct Files Account: Box",
+          "workItem": "3417133",
+          "id": 1561949827429
+        }
+      ],
+      "id": 6
+    },
+    {
+      "author": "Raid Xu",
+      "authorEmail": "Raid.Xu@microsoft.com",
+      "team": "Android",
+      "sprint": 217,
+      "work": [
+        {
+          "status": "Fixed",
+          "abstract": "[Calendar] Tapping animation for 'Search Directory' is not observed while adding People to the calendar",
+          "workItem": "3164008",
+          "id": 1561958612703
+        },
+        {
+          "status": "WIP with",
+          "abstract": "Update telemetry event for search volume",
+          "workItem": "3279780",
+          "id": 1561958642185
+        },
+        {
+          "status": "Closed",
+          "abstract": "[Search] Missing option to send a file via searched file details [Not possible]",
+          "workItem": "3373466",
+          "id": 1561958746633
+        }
+      ],
+      "id": 7
+    },
+    {
+      "author": "Hope Lu",
+      "authorEmail": "yalu2@microsoft.com",
+      "team": "Android",
+      "sprint": 217,
+      "work": [
+        {
+          "status": "WIP with",
+          "abstract": "Display the conflict title in the RSVP modal when only one conflict is present (Code Review)",
+          "workItem": "3428979",
+          "id": 1561964323537
+        },
+        {
+          "status": "WIP with",
+          "abstract": "[Android Polish]Show Room in Schedule Assistant (Code Review)",
+          "workItem": "3309978",
+          "id": 1561964392350
+        },
+        {
+          "status": "",
+          "abstract": "Investigated: 'RSVP' button displayed for forwarded invitation email in Sent items folder",
+          "workItem": "3448563",
+          "id": 1561964743210
+        },
+        {
+          "status": "Investigating",
+          "abstract": "Cannot edit event on opening from a undeliverable mail",
+          "workItem": "3323634",
+          "id": 1561964769244
+        }
+      ],
+      "id": 8
+    },
+    {
+      "author": "Lin Zhang",
+      "authorEmail": "lizhang2@microsoft.com",
+      "team": "Android",
+      "sprint": 217,
+      "work": [
+        {
+          "status": "WIP with",
+          "abstract": "Emails are marked as read after user marked them as unread from context menu and click on another object",
+          "workItem": "3443379",
+          "id": 1561964489420
+        },
+        {
+          "status": "Fixed",
+          "abstract": "Obj Icon is displayed instead of the Attachment icon",
+          "workItem": " 3436735",
+          "id": 1561964532126
+        },
+        {
+          "status": "Investigating",
+          "abstract": "Flag doesn't appear until email is reopened",
+          "workItem": "3434190",
+          "id": 1561964705040
+        }
+      ],
+      "id": 9
     }
   ],
   "comments": [
