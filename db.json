@@ -309,6 +309,855 @@
       "authorEmail": "Drakeet.Xu@microsoft.com",
       "work": [],
       "id": 10
+    },
+    {
+      "author": "Chris Ye",
+      "team": "Android",
+      "sprint": 218,
+      "authorEmail": "zhiye@microsoft.com",
+      "work": [
+        {
+          "status": "WIP with",
+          "abstract": "MDM App Config for threaded conversations (Under review)",
+          "workItem": "3448732",
+          "id": 1562570729414
+        },
+        {
+          "status": "WIP with",
+          "abstract": "MDM App Config for SMIME",
+          "workItem": "3454535",
+          "id": 1562570757890
+        },
+        {
+          "status": "WIP with",
+          "abstract": "Apply Mail/Calendar notification setting from MAM and APP",
+          "workItem": "3468995",
+          "id": 1562575100735
+        },
+        {
+          "status": "",
+          "abstract": "Some config changes since SMIME config enabled",
+          "workItem": "",
+          "id": 1562575141656
+        }
+      ],
+      "id": 11
+    },
+    {
+      "author": "Shaun Wang",
+      "team": "Android",
+      "sprint": 218,
+      "authorEmail": "yangw@microsoft.com",
+      "work": [
+        {
+          "status": "Resolved",
+          "abstract": "[TESTLIO][Calendar] Remove shared calendar appears as option for Family calendar, tapping on it has no action",
+          "workItem": "3466283",
+          "id": 1562554224181
+        },
+        {
+          "status": "WIP with",
+          "abstract": "Add metrics for calendar components",
+          "workItem": "3446842",
+          "id": 1562554254134
+        },
+        {
+          "status": "WIP with",
+          "abstract": "[shaker-android] Calendar will not stop scrolling through the dates when system language is Hevrew.(Code review)",
+          "workItem": "3457284",
+          "id": 1562554304667
+        }
+      ],
+      "id": 12
+    },
+    {
+      "author": "Lency Qian",
+      "team": "Android",
+      "sprint": 218,
+      "authorEmail": "Lei.Qian@microsoft.com",
+      "work": [
+        {
+          "status": "",
+          "abstract": "Resolved [3469518](https://office.visualstudio.com/Outlook%20Mobile/_workitems/edit/3469518) Load full message button is invisible (covered by the compose toolbar) in Compose v1<br><li>Dark mode:<br><ol> <li type=\"circle\">Fixed the scheduled icon on API21</li><li type=\"circle\">Updated the focused inbox tooltip layout</li><li type=\"circle\">Updated the Do not disturb</li><li type=\"circle\">Updated the Lint rules of the icon file validation</li><li type=\"circle\">Updated the pdf viewer loading screen</li><li type=\"circle\">Updated the CLP, attachment banner, security banner in Compose v2</li>",
+          "workItem": "",
+          "id": 1562566471429
+        }
+      ],
+      "id": 13
+    },
+    {
+      "author": "Raid Xu",
+      "team": "Android",
+      "sprint": 218,
+      "authorEmail": "Raid.Xu@microsoft.com",
+      "work": [
+        {
+          "status": "WIP with",
+          "abstract": "Update telemetry event for search volume [new PR, code review]",
+          "workItem": "3279780",
+          "id": 1562565407666
+        },
+        {
+          "status": "Investigating",
+          "abstract": "Option to send in \"Search -> Files\" [proof of concept is completed, but PR rejected due to compose v2 under development]",
+          "workItem": "3373466",
+          "id": 1562565524596
+        },
+        {
+          "status": "Fixed",
+          "abstract": "Follow up of cannot undo last action of two consecutive mail actions ",
+          "workItem": "3389493",
+          "id": 1562565679160
+        },
+        {
+          "status": "Resolved",
+          "abstract": "Bug 3400435: Search Query doesn't re-execute in Low Memory Scenario [Code Review]",
+          "workItem": "3400435",
+          "id": 1562565726722
+        }
+      ],
+      "id": 14
+    },
+    {
+      "author": "Hope Lu",
+      "team": "Android",
+      "sprint": 218,
+      "authorEmail": "yalu2@microsoft.com",
+      "work": [
+        {
+          "status": "Completed",
+          "abstract": "Display the title in the RSVP modal for single conflict",
+          "workItem": "3428979",
+          "id": 1562565613394
+        },
+        {
+          "status": "Completed",
+          "abstract": "[Android] Calendar > Polish > Show Room in Schedule Assistant",
+          "workItem": "3309978",
+          "id": 1562565632222
+        },
+        {
+          "status": "Completed",
+          "abstract": "Remove duplicated Hx call when refreshing calendars for Hx accounts",
+          "workItem": "3163029",
+          "id": 1562565669596
+        },
+        {
+          "status": "WIP with",
+          "abstract": "Cannot edit event on opening from a undeliverable mail(waiting for PM)",
+          "workItem": "3323634",
+          "id": 1562565797081
+        },
+        {
+          "status": "WIP with",
+          "abstract": "Scheduling Assistant - Background calendar is not only selected calendar but all visible calendars (waiting for PM)",
+          "workItem": "3154711",
+          "id": 1562565893942
+        },
+        {
+          "status": "Closed",
+          "abstract": "Edit series events location doesn't rewrite single event location(by design)",
+          "workItem": "3157160",
+          "id": 1562572714705
+        }
+      ],
+      "id": 15
+    },
+    {
+      "author": "Lin Zhang",
+      "team": "Android",
+      "sprint": 218,
+      "authorEmail": "lizhang2@microsoft.com",
+      "work": [
+        {
+          "status": "WIP with",
+          "abstract": "Cursor is clipped by recipient's view [Code Review]",
+          "workItem": "3475437",
+          "id": 1562567294168
+        },
+        {
+          "status": "WIP with",
+          "abstract": "Adding recipient may lead to crash after change the selector [Code Review]",
+          "workItem": "3457951",
+          "id": 1562567359084
+        },
+        {
+          "status": "Fixed",
+          "abstract": "Fix Undo notification is quickly removed if user delete / archive an email",
+          "workItem": "3475437",
+          "id": 1562567473465
+        },
+        {
+          "status": "Investigating",
+          "abstract": "'The Spam folder isn't available' is displayed if user tries to use Move to Spam from Context menu",
+          "workItem": "3443376",
+          "id": 1562573279054
+        }
+      ],
+      "id": 16
+    },
+    {
+      "author": "Summer Li",
+      "team": "Android",
+      "sprint": 218,
+      "authorEmail": "Summer.Li@microsoft.com",
+      "work": [
+        {
+          "status": "Completed",
+          "abstract": "[Dark Mode] Black icon tint for blue surface",
+          "workItem": "",
+          "id": 1562568386566
+        },
+        {
+          "status": "Completed",
+          "abstract": "[Dark Mode] Update IconKit icons to use outlook_app_icon_tint",
+          "workItem": "",
+          "id": 1562568452422
+        },
+        {
+          "status": "WIP with",
+          "abstract": "[Dark Mode] Add Dark Mode toggle in Android 3-Pane View",
+          "workItem": "3467811",
+          "id": 1562574656141
+        },
+        {
+          "status": "",
+          "abstract": "Several bug fixes",
+          "workItem": "",
+          "id": 1562574670831
+        }
+      ],
+      "id": 17
+    },
+    {
+      "author": "Candy Zhang",
+      "team": "Android",
+      "sprint": 218,
+      "authorEmail": "Xiulin.Zhang@microsoft.com",
+      "work": [
+        {
+          "status": "Closed",
+          "abstract": "[TESTLIO][Calendar] Event opens two times if tapping more than once",
+          "workItem": "3160965",
+          "id": 1562568489543
+        },
+        {
+          "status": "Resolved",
+          "abstract": "Talkback: Users are unable to jump out of Agenda view by swiping(As not reproduce)",
+          "workItem": "3153528",
+          "id": 1562568912981
+        },
+        {
+          "status": "WIP with",
+          "abstract": "[TESTLIO][Calendar] 'No calendars to display' message appears after adding Interesting calendar and refreshing the page from All calendars tab(Blocked for HxCore fix)",
+          "workItem": "3282411",
+          "id": 1562568981335
+        },
+        {
+          "status": "WIP with",
+          "abstract": "[Android] Day & 3-day view > Improve all-day section behavior(Waiting for designer's reply)",
+          "workItem": "3143578",
+          "id": 1562569055876
+        }
+      ],
+      "id": 18
+    },
+    {
+      "author": "Wei Meng",
+      "team": "Android",
+      "sprint": 218,
+      "authorEmail": "wemeng@microsoft.com",
+      "work": [
+        {
+          "status": "",
+          "abstract": "Files Direct Account<ul><li>Reduce OD4B migration time</li><li>Prioritize Hx over Files Direct in account migration during app start</li><li>WIP with Dropbox direct file account</li></ul>",
+          "workItem": "",
+          "id": 1562574640896
+        }
+      ],
+      "id": 19
+    },
+    {
+      "author": "Shaun Wang",
+      "team": "Android",
+      "sprint": 219,
+      "authorEmail": "yangw@microsoft.com",
+      "work": [
+        {
+          "status": "WIP with",
+          "abstract": "[Calendar] Alert for upcoming card is not displayed properly",
+          "workItem": "3158885",
+          "id": 1563166449824
+        },
+        {
+          "status": "Resolved",
+          "abstract": "[shaker-android] Calendar will not stop scrolling through the dates when system language is Hevrew.",
+          "workItem": "3457284",
+          "id": 1563166489098
+        },
+        {
+          "status": "Resolved",
+          "abstract": "[Calendar] Error appeared when accepting shared calendars",
+          "workItem": "3158171",
+          "id": 1563166510924
+        },
+        {
+          "status": "WIP with",
+          "abstract": "Show \"Loading message...\" snackbar when loading message from notification(Code review)",
+          "workItem": "3393033",
+          "id": 1563166536475
+        },
+        {
+          "status": "Resolved",
+          "abstract": "Android: Create an appointment: With Talkback, Unable to focus the heading contact in \"Select Calendar\" popup. And the current selected value is not announced.",
+          "workItem": "3155522",
+          "id": 1563166613825
+        }
+      ],
+      "id": 20
+    },
+    {
+      "author": "Lin Zhang",
+      "team": "Android",
+      "sprint": 219,
+      "authorEmail": "lizhang2@microsoft.com",
+      "work": [
+        {
+          "status": "Fixed",
+          "abstract": "Removing all recipients in Compose lead to crash",
+          "workItem": "3478338",
+          "id": 1563169314866
+        },
+        {
+          "status": "Fixed",
+          "abstract": "Cursor is clipped by recipient's view",
+          "workItem": "3475437",
+          "id": 1563169344880
+        },
+        {
+          "status": "Fixed",
+          "abstract": "Adding recipient may lead to crash after change the selector",
+          "workItem": "3457951",
+          "id": 1563169426092
+        },
+        {
+          "status": "Fixed",
+          "abstract": "Crash and selection issues in TokenCompleteTextView",
+          "workItem": "3457951",
+          "id": 1563169518965
+        },
+        {
+          "status": "WIP with",
+          "abstract": "Contact recommendation not working if the cursor is not at the end [Code Review]",
+          "workItem": "3478403",
+          "id": 1563169605916
+        },
+        {
+          "status": "",
+          "abstract": "Release Manager",
+          "workItem": "",
+          "id": 1563169633775
+        }
+      ],
+      "id": 21
+    },
+    {
+      "author": "Wei Meng",
+      "team": "Android",
+      "sprint": 219,
+      "authorEmail": "wemeng@microsoft.com",
+      "work": [
+        {
+          "status": "",
+          "abstract": "Direct Files Account <ul><li>Dropbox part completed</li><li>Reduce OD4B migration time</li><li>Use user friendly account description in re-auth notification</li></ul>",
+          "workItem": "",
+          "id": 1563169758909
+        },
+        {
+          "status": "Fixed",
+          "abstract": "DateTimePickerDialog tab color",
+          "workItem": "3480781",
+          "id": 1563169804740
+        }
+      ],
+      "id": 22
+    },
+    {
+      "author": "Chris Ye",
+      "team": "Android",
+      "sprint": 219,
+      "authorEmail": "zhiye@microsoft.com",
+      "work": [
+        {
+          "status": "Completed",
+          "abstract": "MDM app config for S/MIME",
+          "workItem": "3448732",
+          "id": 1563172495207
+        },
+        {
+          "status": "Completed",
+          "abstract": "MDM app config for threaded conversations",
+          "workItem": "3448732",
+          "id": 1563172522663
+        },
+        {
+          "status": "WIP with",
+          "abstract": "Apply Mail/Calendar notification setting from MAM and APP(Under review)",
+          "workItem": "3468995",
+          "id": 1563172566667
+        },
+        {
+          "status": "",
+          "abstract": "Some investigation work about IAP Premium and JS uglify",
+          "workItem": "",
+          "id": 1563172634907
+        }
+      ],
+      "id": 23
+    },
+    {
+      "author": "Raid Xu",
+      "team": "Android",
+      "sprint": 219,
+      "authorEmail": "Raid.Xu@microsoft.com",
+      "work": [
+        {
+          "status": "Completed",
+          "abstract": "Update telemetry event for search volume",
+          "workItem": "3279780",
+          "id": 1563174133560
+        },
+        {
+          "status": "Resolved",
+          "abstract": "Requery search when killed by low mem",
+          "workItem": "3400435",
+          "id": 1563174227388
+        },
+        {
+          "status": "Resolved",
+          "abstract": "App crash when click on zero query contact",
+          "workItem": "3480916",
+          "id": 1563174276214
+        },
+        {
+          "status": "WIP with",
+          "abstract": "Improve contact search de-dupe/merge",
+          "workItem": "3216920",
+          "id": 1563174302124
+        }
+      ],
+      "id": 24
+    },
+    {
+      "author": "Hope Lu",
+      "team": "Android",
+      "sprint": 219,
+      "authorEmail": "yalu2@microsoft.com",
+      "work": [
+        {
+          "status": "Fixed",
+          "abstract": "NullPointerException when proposing new time for cross-day events",
+          "workItem": "3481298",
+          "id": 1563174205940
+        },
+        {
+          "status": "Resolved",
+          "abstract": "RSVP is missing from mail for the events that already started (Duplicated)",
+          "workItem": "3158335",
+          "id": 1563174292065
+        },
+        {
+          "status": "Closed",
+          "abstract": "Missing RSVP response to organizer for Hx (Obsolete)",
+          "workItem": "3419650",
+          "id": 1563174451727
+        },
+        {
+          "status": "WIP with",
+          "abstract": "Cannot edit event on opening from a undeliverable mail",
+          "workItem": "3323634",
+          "id": 1563174495194
+        },
+        {
+          "status": "Fixed",
+          "abstract": "Show conference rooms in schedule assistant even if no other attendees",
+          "workItem": "",
+          "id": 1563174545825
+        }
+      ],
+      "id": 25
+    },
+    {
+      "author": "Lency Qian",
+      "team": "Android",
+      "sprint": 219,
+      "authorEmail": "Lei.Qian@microsoft.com",
+      "work": [
+        {
+          "status": "Completed",
+          "abstract": "[Dark mode] Refactor the bottom sheet in File direct list v1 and v2",
+          "workItem": "3475685",
+          "id": 1563175125140
+        },
+        {
+          "status": "Completed",
+          "abstract": "[Dark mode] Product tour screens",
+          "workItem": "3477934",
+          "id": 1563175195723
+        },
+        {
+          "status": "",
+          "abstract": "[Dark mode] Update contact pills colors (code review)",
+          "workItem": "",
+          "id": 1563175230690
+        },
+        {
+          "status": "",
+          "abstract": "Dark mode testing and troubleshooting",
+          "workItem": "",
+          "id": 1563175452752
+        }
+      ],
+      "id": 26
+    },
+    {
+      "author": "Summer Li",
+      "team": "Android",
+      "sprint": 219,
+      "authorEmail": "Summer.Li@microsoft.com",
+      "work": [
+        {
+          "status": "Completed",
+          "abstract": "[Dark Mode] Add Dark Mode toggle in Android 3-Pane View",
+          "workItem": "",
+          "id": 1563177861438
+        },
+        {
+          "status": "Completed",
+          "abstract": "Remove blue header feature flag",
+          "workItem": "",
+          "id": 1563177969466
+        },
+        {
+          "status": "Completed",
+          "abstract": "Remove calendar search feature flag",
+          "workItem": "",
+          "id": 1563177989129
+        },
+        {
+          "status": "Fixed",
+          "abstract": "Dark Mode related bugs and shaker",
+          "workItem": "",
+          "id": 1563178010562
+        }
+      ],
+      "id": 27
+    },
+    {
+      "author": "Candy Zhang",
+      "team": "Android",
+      "sprint": 219,
+      "authorEmail": "Xiulin.Zhang@microsoft.com",
+      "work": [
+        {
+          "status": "Fixed",
+          "abstract": "When layout direction is RTL, the most matching address appears at the end of the list",
+          "workItem": "3468999",
+          "id": 1563183367589
+        },
+        {
+          "status": "Fixed",
+          "abstract": "Response area is incorrect when long pressing RTL MultiDayView",
+          "workItem": "3471472",
+          "id": 1563183398896
+        },
+        {
+          "status": "Fixed",
+          "abstract": "Snapping doesn't work on RTL MultiDayView",
+          "workItem": "3478380",
+          "id": 1563183515310
+        },
+        {
+          "status": "Completed",
+          "abstract": "Change meeting organizer status for cancelled meetings",
+          "workItem": "3466801",
+          "id": 1563183537857
+        },
+        {
+          "status": "WIP with",
+          "abstract": "[Android] Day & 3-day view > Improve all-day section behavior(Code Review)",
+          "workItem": "3143578",
+          "id": 1563183587479
+        }
+      ],
+      "id": 28
+    },
+    {
+      "author": "Shaun Wang",
+      "team": "Android",
+      "sprint": 221,
+      "authorEmail": "yangw@microsoft.com",
+      "work": [
+        {
+          "status": "Fixed",
+          "abstract": "[Android] App crashing when user try to add the local calendar app",
+          "workItem": "3466619",
+          "id": 1564378162437
+        },
+        {
+          "status": "WIP with",
+          "abstract": "[Calendar] Alert for upcoming card is not displayed properly",
+          "workItem": "3158885",
+          "id": 1564378183144
+        },
+        {
+          "status": "WIP with",
+          "abstract": "Show \"Loading message...\" snackbar when loading message from notification(Code review)",
+          "workItem": "3393033",
+          "id": 1564378197473
+        }
+      ],
+      "id": 29
+    },
+    {
+      "author": "Raid Xu",
+      "team": "Android",
+      "sprint": 221,
+      "authorEmail": "Raid.Xu@microsoft.com",
+      "work": [
+        {
+          "status": "WIP with",
+          "abstract": "Fix PopupWindow position when adjustPan triggered",
+          "workItem": "3475740",
+          "id": 1564379400717
+        },
+        {
+          "status": "WIP with",
+          "abstract": "Improve contact search dedupe",
+          "workItem": "3216920",
+          "id": 1564379428990
+        }
+      ],
+      "id": 30
+    },
+    {
+      "author": "Wei Meng",
+      "team": "Android",
+      "sprint": 221,
+      "authorEmail": "wemeng@microsoft.com",
+      "work": [
+        {
+          "status": "Fixed",
+          "abstract": "Event Details: event icon picker blinks",
+          "workItem": "3488205",
+          "id": 1564380318088
+        },
+        {
+          "status": "Fixed",
+          "abstract": "[Mail][Compose] 'Insert link' button closes the file picker page without attaching the link of the selected ODB file",
+          "workItem": "3373371",
+          "id": 1564380355153
+        }
+      ],
+      "id": 31
+    },
+    {
+      "author": "Lency Qian",
+      "team": "Android",
+      "sprint": 221,
+      "authorEmail": "Lei.Qian@microsoft.com",
+      "work": [
+        {
+          "status": "Completed",
+          "abstract": "[Dark mode] Updated contact pills color",
+          "workItem": "3480240",
+          "id": 1564381550907
+        },
+        {
+          "status": "Completed",
+          "abstract": "[Dark mode] Update day picker to support the time conflicts",
+          "workItem": "3489295",
+          "id": 1564381638231
+        },
+        {
+          "status": "Completed",
+          "abstract": "[Dark mode] Update product tour",
+          "workItem": "3493439",
+          "id": 1564381681610
+        },
+        {
+          "status": "",
+          "abstract": "Fixed dark mode bugs (POP3 account, pill switcher, CLP header, product tour status bar)",
+          "workItem": "",
+          "id": 1564386229521
+        }
+      ],
+      "id": 32
+    },
+    {
+      "author": "Hope Lu",
+      "team": "Android",
+      "sprint": 221,
+      "authorEmail": "yalu2@microsoft.com",
+      "work": [
+        {
+          "status": "WIP with",
+          "abstract": "Incorrect Busy Status when proposing new time for events over 12 hours but not cross-day(Code Review)",
+          "workItem": "3489638",
+          "id": 1564384481547
+        },
+        {
+          "status": "Fixed",
+          "abstract": "[Calendar] Cannot edit event on opening from a undeliverable mail",
+          "workItem": "3323634",
+          "id": 1564384610461
+        },
+        {
+          "status": "Closed",
+          "abstract": "'Could not share calendar' error displayed while adding/removing Outlook and Yahoo accounts on share calendar (Cannot Reproduce)",
+          "workItem": "3462219",
+          "id": 1564384649815
+        }
+      ],
+      "id": 33
+    },
+    {
+      "author": "Lin Zhang",
+      "team": "Android",
+      "sprint": 221,
+      "authorEmail": "lizhang2@microsoft.com",
+      "work": [
+        {
+          "status": "Fixed",
+          "abstract": "Compose v2 > Recipients/subject fields change heights when losing/gaining focus",
+          "workItem": "3487728",
+          "id": 1564384670388
+        },
+        {
+          "status": "Fixed",
+          "abstract": "Compose > Cannot move the cursor to right using Gboard navigation",
+          "workItem": "3489364",
+          "id": 1564384703448
+        },
+        {
+          "status": "WIP with",
+          "abstract": "Compose > Double display of contact chip when the contact email is too long[Code Review]",
+          "workItem": "3494638",
+          "id": 1564384818124
+        },
+        {
+          "status": "WIP with",
+          "abstract": "[Accessibility] Compose v2 > Announce recipient count  for Recipients fields [Code Review]",
+          "workItem": "3498542",
+          "id": 1564384907069
+        }
+      ],
+      "id": 34
+    },
+    {
+      "author": "Candy Zhang",
+      "team": "Android",
+      "sprint": 221,
+      "authorEmail": "Xiulin.Zhang@microsoft.com",
+      "work": [
+        {
+          "status": "Closed",
+          "abstract": "Add padding for \"PRIVACY AND TERMS\"(As not reproduce)",
+          "workItem": "3469010",
+          "id": 1564385129313
+        },
+        {
+          "status": "Fixed",
+          "abstract": "No padding between items in contact list when layout direction is RTL",
+          "workItem": "3469007",
+          "id": 1564385146796
+        },
+        {
+          "status": "Resolved",
+          "abstract": "[TESTLIO][Calendar] 'No calendars to display' message appears after adding Interesting calendar and refreshing the page from All calendars tab(Fixed by HxCore)",
+          "workItem": "3282411",
+          "id": 1564385627481
+        },
+        {
+          "status": "WIP with",
+          "abstract": "Day & 3-day view > Improve all-day section behavior(Code Review)",
+          "workItem": "3143578",
+          "id": 1564385643770
+        },
+        {
+          "status": "WIP with",
+          "abstract": "Rtl support for viewPagers(Code Review)",
+          "workItem": "3498157",
+          "id": 1564385659928
+        },
+        {
+          "status": "WIP with",
+          "abstract": "Email of calendar account disappear on RTL mode",
+          "workItem": "3484482",
+          "id": 1564385682036
+        }
+      ],
+      "id": 35
+    },
+    {
+      "author": "Chris Ye",
+      "team": "Android",
+      "sprint": 221,
+      "authorEmail": "zhiye@microsoft.com",
+      "work": [
+        {
+          "status": "Completed",
+          "abstract": "Direct Files Account: OneDrive MSA",
+          "workItem": "3431626",
+          "id": 1564385810288
+        },
+        {
+          "status": "Completed",
+          "abstract": "Apply MAM app config and policy to notification setting",
+          "workItem": "3468995",
+          "id": 1564385870835
+        },
+        {
+          "status": "Completed",
+          "abstract": "Remove Event.getLocation() method",
+          "workItem": "3161967",
+          "id": 1564385918556
+        }
+      ],
+      "id": 36
+    },
+    {
+      "author": "Summer Li",
+      "team": "Android",
+      "sprint": 221,
+      "authorEmail": "Summer.Li@microsoft.com",
+      "work": [
+        {
+          "status": "Completed",
+          "abstract": "[Dark Mode] Dark mode for search 2 pane",
+          "workItem": "",
+          "id": 1564387029038
+        },
+        {
+          "status": "Fixed",
+          "abstract": "[Android] Blank left navigation pane / side menu view for tablets.",
+          "workItem": "3514890",
+          "id": 1564387152674
+        },
+        {
+          "status": "Completed",
+          "abstract": "Remove `AGENDA_WIDGET_V2` and `INBOX_WIDGET_V2` feature flags",
+          "workItem": "",
+          "id": 1564387196986
+        },
+        {
+          "status": "Fixed",
+          "abstract": "Dark Mode related bugs",
+          "workItem": "",
+          "id": 1564387213101
+        }
+      ],
+      "id": 37
     }
   ],
   "comments": [
