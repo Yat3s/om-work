@@ -3,7 +3,7 @@ import { Modal, Table, Tag, Button, Icon } from 'antd';
 import ComposeStatus from './ComposeStatus';
 import axios from "axios";
 import { config } from '../Config'
-
+import logo from '../assets/hey.jpeg'; 
 class StatusList extends React.Component {
     constructor(props) {
         super(props);
@@ -237,6 +237,7 @@ class StatusList extends React.Component {
         ];
         return (
             <div>
+                <img alt="example" width="300" height="200" src={logo} />
                 <div className='m-5 shadow p-5' align="end">
                     <Button type="primary" onClick={this.generateMarkdownPlaintext.bind(this)}>Generate Markdown Plaintext</Button>
                     <Table className='mt-3' columns={columns} dataSource={this.state.feats} />
